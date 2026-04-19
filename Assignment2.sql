@@ -1,2 +1,12 @@
+USE school_database;
+
 CREATE TABLE STUDENT
 (Student_ID INT unique PRIMARY KEY, FName VARCHAR(255), LName VARCHAR(255), Major VARCHAR(255), AcademicYear DATE);
+
+SELECT * from STUDENT;
+
+
+CREATE TABLE INSTRUCTOR
+(Instructor_ID INT UNIQUE PRIMARY KEY, FullName VARCHAR(255), Department VARCHAR(255));
+
+select * from INSTRUCTOR;
