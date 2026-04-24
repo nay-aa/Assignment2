@@ -1,6 +1,12 @@
 USE school_database;
 -- STUDENT Table
 
+-- Naya Kaba
+-- 4/24/2025
+-- CS420
+
+
+-- Phase1 Starts Here
 CREATE TABLE STUDENT
 (Student_ID INT unique PRIMARY KEY, FName VARCHAR(255), LName VARCHAR(255), Major VARCHAR(255), AcademicYear DATE);
 
@@ -40,6 +46,7 @@ DESCRIBE ENROLLMENT;
 -- SHOW ALL TABLES
 show tables;
 
+-- Phase2 Starts Here
 -- INSRT DATA INTO STUDENT
 INSERT INTO STUDENT VALUES
 (1, 'Sam', 'White', 'Computer Science', '2022_09_23'),
@@ -85,3 +92,27 @@ INSERT INTO ENROLLMENT VALUES
 
 SELECT * FROM ENROLLMENT;
 
+
+-- Phase3 Starts Here
+-- update the major of one student
+UPDATE STUDENT SET Major = 'Marketing' WHERE Student_ID = 2;
+select * from STUDENT;
+
+-- update the instructor assigned to one course
+Update COURSE SET Instructor_ID = 1 WHERE Course_ID = 5;
+SELECT * from COURSE;
+
+-- update the grade of one student in a course
+UPDATE ENROLLMENT SET Grade = 'A-' WHERE Enrollment_ID = 2;
+SELECT * FROM ENROLLMENT;
+
+-- delete one enrollment record
+DELETE FROM ENROLLMENT WHERE Enrollment_ID = 7;
+SELECT * FROM ENROLLMENT;
+
+-- Attempt to delete a student who still has enrollment records and observe the result
+DELETE FROM STUDENT WHERE Student_ID = 6;
+DELETE FROM ENROLLMENT WHERE Enrollment_ID = 5;
+DELETE FROM STUDENT WHERE Student_ID = 6;
+SELECT * FROM ENROLLMENT;
+SELECT * FROM STUDENT;
