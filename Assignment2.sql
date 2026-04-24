@@ -40,3 +40,48 @@ DESCRIBE ENROLLMENT;
 -- SHOW ALL TABLES
 show tables;
 
+-- INSRT DATA INTO STUDENT
+INSERT INTO STUDENT VALUES
+(1, 'Sam', 'White', 'Computer Science', '2022_09_23'),
+(2, 'James', 'Bing', 'Business', '2025_09_23'),
+(3, 'Ben', 'Anderson', 'Art', '2023_09_23'),
+(4, 'Peter', 'Scott', 'Computer Science', '2019_09_23'),
+(5, 'Amie', 'Black', 'Mathematics', '2024_09_23'),
+(6, 'Hannah', 'Berns', 'Computer Science', '2022_09_23');
+
+SELECT * FROM STUDENT;
+
+
+-- INSERT DATA INTO INSTRUCTOR
+INSERT INTO INSTRUCTOR VALUES
+(1, 'John Liang', 'Computer Science Department'),
+(2, 'Nancy Smith', 'Mathmematics Department'),
+(3, 'John Liang', 'Art Department'),
+(4, 'James White', 'Computer Science Department'),
+(5, 'Carl Johnson', 'Business Department');
+
+SELECT * FROM INSTRUCTOR;
+
+-- INSERT DATA INTO COURSE
+INSERT INTO COURSE VALUES
+(1, 'MATH330 - Sets and Logic', 2),
+(2, 'ART101 - Intro to Drawing', 3),
+(3, 'BUS101 - Intro to Business Management', 5),
+(4, 'CS40 - Software Engineering', 1),
+(5, 'CS301 - Computer Architecture', 4);
+
+SELECT * FROM COURSE;
+
+
+-- INSERT DATA INTO ENROLLMENT
+INSERT INTO ENROLLMENT VALUES
+(1, 1, 4, 'A+'),
+(2, 4, 4, 'B+'),
+(3, 2, 3, 'A-'),
+(4, 5, 1, 'B-'),
+(5, 6, 5, 'B+'),
+(6, 1, 5, 'A+'),
+(7, 3, 2, 'A+');
+
+SELECT * FROM ENROLLMENT;
+
