@@ -116,3 +116,43 @@ DELETE FROM ENROLLMENT WHERE Enrollment_ID = 5;
 DELETE FROM STUDENT WHERE Student_ID = 6;
 SELECT * FROM ENROLLMENT;
 SELECT * FROM STUDENT;
+
+
+-- Phase4 Starts Here
+
+-- List all students ordered by last name
+SELECT * FROM STUDENT ORDER BY LName;
+
+-- Display all courses taught by a specific instructor
+SELECT * FROM COURSE WHERE Instructor_ID = 1;
+
+-- Show each student along with the courses they are enrolled in
+SELECT 
+s.Student_ID,
+s.FName,
+s.LName,
+c.Course_title
+FROM STUDENT s 
+JOIN ENROLLMENT e ON s.Student_ID = e.Student_ID
+ JOIN COURSE c ON e.Course_ID = c.Course_ID;
+
+-- Display student names and their grades for a selected course
+SELECT 
+s.Student_ID,
+s.FName,
+s.LName,
+c.Course_title,
+e.Grade
+FROM STUDENT s 
+JOIN ENROLLMENT e ON s.Student_ID = e.Student_ID
+ JOIN COURSE c ON e.Course_ID = c.Course_ID
+ WHERE c.Course_ID = 4;
+
+-- Show each course along with the number of students enrolled in it
+SELECT
+c.Course_ID,
+c.Course_Title,
+COUNT(e.Student_ID) AS Students_Number 
+FROM COURSE c
+JOIN ENROLLMENT e ON c.Course_ID = e.Course_ID
+GROUP BY c.Course_ID, c.Course_title;
